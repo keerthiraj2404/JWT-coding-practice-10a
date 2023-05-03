@@ -61,7 +61,7 @@ function authenticateToken(request, response, next) {
     response.status(401);
     response.send("Invalid JWT Token");
   } else {
-    jwt.verify(jwtToken, "MY_SECRET_TOKEN", async (error, payload) => {
+    jwt.verify(jwtToken, "ladsakdjhlfaieu", async (error, payload) => {
       if (error) {
         response.status(401);
         response.send("Invalid JWT Token");
@@ -88,7 +88,7 @@ app.post("/login/", async (request, response) => {
       const payload = {
         username: username,
       };
-      const jwtToken = jwt.sign(payload, "MY_SECRET_TOKEN");
+      const jwtToken = jwt.sign(payload, "ladsakdjhlfaieu");
       response.send({ jwtToken });
     } else {
       response.status(400);
